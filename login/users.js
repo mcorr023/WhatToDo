@@ -132,3 +132,4 @@ exports.logout = async (req, res) => {
   });
   res.status(200).redirect("/");
 };
+
