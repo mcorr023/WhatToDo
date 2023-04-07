@@ -19,7 +19,7 @@ router.get("/profile", userController.isLoggedIn, (req, res) => {
   }
 });
 
-router.get("/home", userController.isLoggedIn, (req, res) => {
+router.get("/", userController.isLoggedIn, (req, res) => {
   if (req.user) {
     res.render("home", { user: req.user });
   } else {
@@ -27,14 +27,12 @@ router.get("/home", userController.isLoggedIn, (req, res) => {
   }
 });
 
-router.get("/home", eventController.listOfEvents, (req, res) => {
-  if(req.body) {
-    res.render("home", {events: req.body});
-  }
-});
 
-router.get("/home", userController.logout, (req, res) => {
-  res.redirect("/login");
+router.get("/home", eventController.eventList, (req, res) => {
+  console.log("test");
+  if (req.body) {
+    res.render("home", { events: req.body });
+  }
 });
 
 module.exports = router;

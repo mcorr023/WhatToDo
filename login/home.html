@@ -20,7 +20,7 @@
     </nav>
 
     <div class="container-fluid">
-      <h2>Home Page</h2>
+      <h2>Home Page, Welcome user</h2>
       <h3>List of Events:</h3>
       <table border="1">
         <thead>
@@ -35,19 +35,16 @@
           </tr>
         </thead>
         <tbody>
-          {{#each events}}
           <tr>
-            <td>{{this.name }}</td>
-            <td>{{this.description}}</td>
-            <td>{{this.type}}</td>
-            <td>{{this.date }}</td>
-            <td>{{this.city }}</td>
-            <td>{{this.state }}</td>
-            <td>{{this.address }}</td>
+            <td>name</td>
+            <td>description</td>
+            <td>type</td>
+            <td>date</td>
+            <td>city</td>
+            <td>state</td>
+            <td>address</td>
           </tr>
-          {{else}}
             <tr>No Events at the moment</tr>
-          {{/each}}
         </tbody>
     </table>
     </div>

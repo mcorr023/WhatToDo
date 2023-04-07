@@ -1,11 +1,9 @@
 const express = require("express");
 const userController = require("./users");
-const eventController = require("./events");
 const router = express.Router();
 
 router.post("/register", userController.register);
 router.post("/login", userController.login);
-router.get("/", userController.logout);
-router.get("/home",eventController.listOfEvents);
+router.get("/logout", userController.logout);
 
 module.exports = router;

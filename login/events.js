@@ -10,16 +10,24 @@ const db = mysql.createConnection({
   database: process.env.DATABASE,
 });
 
-exports.listOfEvents = async (req, res, next) => {
-    console.log(req.body);
-    db.query(
+exports.eventList = (req, res, next) => {
+    console.log("test2");
+
+    db.query( 
         "select * from events",
-        (err, results) => {
-            console.log(results);
-            if (results<=0) {
+        (err, result) => {
+            console.log(result);
+            if (err) {
+                confirm.log(err);
+                return next();
+              }
+            if (result.length <=0) {
+                res.render("home", { 
+                    msg: "No events to display",
+                    msg_type: "error",});
                 return next();
             }
-            req.body = results;
+            req.body = result;
             return next();
-        }
-    )};
+        });
+    };
