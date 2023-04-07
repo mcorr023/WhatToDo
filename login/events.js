@@ -11,8 +11,6 @@ const db = mysql.createConnection({
 });
 
 exports.eventList = (req, res, next) => {
-    console.log("test2");
-
     db.query( 
         "select * from events",
         (err, result) => {

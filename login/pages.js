@@ -29,7 +29,6 @@ router.get("/", userController.isLoggedIn, (req, res) => {
 
 
 router.get("/home", eventController.eventList, (req, res) => {
-  console.log("test");
   if (req.body) {
     res.render("home", { events: req.body });
   }
