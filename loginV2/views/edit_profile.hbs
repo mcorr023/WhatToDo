@@ -18,12 +18,16 @@
             <form action="/edit_profile" method="POST">
                 <label>First Name</label>
                 <input type="text" placeholder="Enter First Name" name="firstname" required>
+                <br>
                 <label>Last Name</label>
                 <input type="city" placeholder="Enter Last Name" name="lastname" required>
+                <br>
                 <label>Email Address</label>
                 <input type="email" placeholder="Enter Email Address" name="email" required>
+                <br>
                 <label>Date of Birth</label>
                 <input type="date" placeholder="00-00-0000" name="dateofbirth" required>
+                <br>
                 <input type="hidden" name="id" value={{user.id}}>
                 <button type="submit">Submit</button>
             </form>
