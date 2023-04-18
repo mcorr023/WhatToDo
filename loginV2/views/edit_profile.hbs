@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+    <div>
+        <!--====form section start====-->
+        <div class="user-detail">
+
+            <h2>Edit Profile Information</h2>
+            <form action="/edit_profile" method="POST">
+                <label>First Name</label>
+                <input type="text" placeholder="Enter First Name" name="firstname" required>
+                <label>Last Name</label>
+                <input type="city" placeholder="Enter Last Name" name="lastname" required>
+                <label>Email Address</label>
+                <input type="email" placeholder="Enter Email Address" name="email" required>
+                <label>Date of Birth</label>
+                <input type="date" placeholder="00-00-0000" name="dateofbirth" required>
+                <input type="hidden" name="id" value={{user.id}}>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>
+<!--====form section start====-->

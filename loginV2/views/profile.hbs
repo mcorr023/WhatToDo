@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="logo">WhatToDo</div>
+    <div class="menu">
+      <a href="/home">Home</a>
+      <a href="/profile">Profile</a>
+      <a href="/">Logout</a>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <h2>User Profile</h2>
+    <h3>First Name : {{user.firstname}}</h3>
+    <h3>Last Name : {{user.lastname}}</h3>
+    <h3>Email : {{user.email}}</h3>
+    <h3>Date Of Birth: {{user.dateofbirth}}</h3>
+    <div>
+      <button class="btn btn-primary"><a href="/edit_profile">Edit Profile</a></button>
+      <button class="btn btn-success"><a href="/add_event">Add Event</a></button>
+    </div>
+  </div>
+
+  <div class="table">
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Type</th>
+          <th>Date</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Location</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each events}}
+        <tr>
+          <td>{{this.eventName}}</td>
+          <td>{{this.description}}</td>
+          <td>{{this.type}}</td>
+          <td>{{this.date}}</td>
+          <td>{{this.city}}</td>
+          <td>{{this.state}}</td>
+          <td>{{this.address}}</td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+CREATE TABLE events
+(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    description VARCHAR(500),
+    type VARCHAR(100),
+    date DATE,
+    city VARCHAR(100),
+    state VARCHAR(100),
+    address VARCHAR(100)
+);
+
+INSERT INTO events (name, description, type, date, city, state, address) 
+VALUES ('Flo Rida', 'Flo Rida concert', 'Concert', '2023-04-07', 'Miami', 'FL', 'E11EVEN');
+
+INSERT INTO events (name, description, type, date, city, state, address) 
+VALUES ('Gorillaz', 'Gorillaz concert', 'Concert', '2023-04-10', 'Miami', 'FL', 'Miami-Dade Arena');
+
+INSERT INTO events (name, description, type, date, city, state, address) 
+VALUES ('Little Big', 'Little Big concert', 'Concert', '2023-06-09', 'Miami', 'FL', 'Sport of Kings');
+
+INSERT INTO events (name, description, type, date, city, state, address) 
+VALUES ('Twice', 'Twice concert', 'Concert', '2023-07-09', 'Atlanta', 'GA', 'Truist Park');
+
+INSERT INTO events (name, description, type, date, city, state, address) 
+VALUES ('Miami Beach Pride', 'Pride festival', 'Festival', '2023-04-16', 'Miami Beach', 'FL', 'Lummus Park');
+
+INSERT INTO events (name, description, type, date, city, state, address) 
+VALUES ('F1 Miami Grand Prix', 
+'Miami International Autodrome will combine the prestige of Formula 1 with the culture of Miami to create an unparalleled racing experience', 
+'Event', '2023-05-07', 'Miami Gardens', 'FL', 'Hard Rock Stadium');
+

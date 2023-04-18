@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Page</title>
+  <link rel="stylesheet" href="/css/eventStyle.css" />
+</head>
+
+<body>
+  <nav>
+    <div class="logo">WhatToDo</div>
+    <div class="menu">
+      <a href="/home">Home</a>
+      <a href="/profile">Profile</a>
+      <a href="/">Logout</a>
+    </div>
+  </nav>
+  <div class="container">
+    <h2>Upcoming Events:</h2>
+    <div class="row">
+      <div class="col-xs-6">
+        <div id='attraction-panel' class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Attraction</h3>
+          </div>
+          <div id="attraction" class="panel-body">
+            <h4 class="list-group-item-heading">Attraction title</h4>
+            <img class="col-xs-12" src="">
+            <p id="classification"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="events-container"></div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const API_URL = 'https://app.ticketmaster.com/discovery/v2/events.json?apikey=4mUVtgnxdkRJlmvaVdNMPiSdIyFtEjSR#';
+    axios.get(API_URL)
+      .then((response) => {
+        const eventsContainer = document.getElementById('events-container');
+        const events = response.data._embedded.events;
+        events.forEach((event) => {
+          const eventCard = `
+						<div class="col-md-4">
+							<div class="card">
+								<img class="card-img-top" src="${event.images[0].url}" alt="${event.name}">
+								<div class="card-body">
+									<h5 class="card-title">${event.name}</h5>
+									<p class="card-text">${event.dates.start.localDate} ${event.dates.start.localTime}</p>
+									<p class="card-text">${event._embedded.venues[0].name}</p>
+									<a href="${event.url}" class="btn btn-primary">Buy Tickets</a>
+								</div>
+							</div>
+						</div>
+					`;
+          eventsContainer.innerHTML += eventCard;
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  </script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+    integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+    <div>
+        <h2>Add New Event</h2>
+        <form method="POST" action="/add_event">
+            <label for="eventName">Name:</label>
+            <input type="text" name="eventName">
+
+            <label for="description">Description:</label>
+            <input type="text" name="description">
+
+            <label for="type">Type:</label>
+            <input type="text" name="type">
+
+            <label for="date">Date:</label>
+            <input type="date" name="date">
+
+            <label for="city">City:</label>
+            <input type="text" name="city">
+
+            <label for="state">State:</label>
+            <input type="text" name="state">
+
+            <label for="address">Address:</label>
+            <input type="text" name="address">
+
+            <button type="submit">Add Event</button>
+        </form>
+    </div>
+</body>
+
+</html>
